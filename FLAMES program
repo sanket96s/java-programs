@@ -1,0 +1,98 @@
+// package oopj;
+import java.util.*;
+public class Main5 // save file as Main5
+{
+    public static void main(String[] args) {
+
+        // input and required data
+
+        Scanner s = new Scanner(System.in);
+        String s1, s2,flames = "FLAMES",temp="";
+        int i, j, count = 0,a=0;
+        char c1, c2,result=' ';
+        System.out.println("Enter your name : ");
+        s1 = s.nextLine();
+        System.out.println("Enter your crush name : ");
+        s2 = s.nextLine();
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+        StringBuffer s3 = new StringBuffer(s1);
+        StringBuffer s4 = new StringBuffer(s2);
+        StringBuffer s5 = new StringBuffer(flames);
+
+        // cancelling same characters
+
+        for (i = 0; i < s1.length(); i++) {
+            c1 = s3.charAt(i);
+            for (j = 0; j < s2.length(); j++) {
+                c2 = s4.charAt(j);
+                 if (c1 == c2) {
+                    s3.replace(i, i + 1, "0");
+                    s4.replace(j, j + 1, "0");
+                    break;
+                }
+            }
+        }
+        // System.out.println(s3);  --> checking same characters are removed
+        // System.out.println(s4);  --> checking same characters are removed
+
+        // counting remaining characters
+
+        // from first string
+        for (i = 0; i < s3.length(); i++) {
+            if (s3.charAt(i) != '0'){
+                count++;
+            }
+        }
+        // from second string
+        for (i = 0; i < s4.length(); i++) {
+            if (s4.charAt(i) != '0') {
+                count++;
+            }
+        }
+        // System.out.println(count); --> checking total number of characters remaining
+
+        // removing FLAMES letter till we get only 1 letter remaining
+
+        while (s5.length() != 1){
+            a = count % s5.length();
+            if (a != 0){
+                temp = s5.substring(a) + s5.substring(0,a-1);
+            }
+            else {
+                temp = s5.substring(0,s5.length()-1);
+            }
+            s5 = new StringBuffer(temp);
+            result = s5.charAt(0);
+        }
+        System.out.println(result);
+
+        // matching the result
+
+        switch (result){
+            case 'F' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Friends");
+                break;
+
+            case 'L' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Love");
+                break;
+
+            case 'A' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Affection");
+                break;
+
+            case 'M' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Marriage");
+                break;
+
+            case 'E' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Enemy");
+                break;
+
+            case 'S' :
+                System.out.println(s1 + " and " + s2 + " --> " + " Sister");
+                break;
+        }
+    }
+}
