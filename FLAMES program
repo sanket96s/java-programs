@@ -65,7 +65,7 @@ public class Main5 // save file as Main5
             s5 = new StringBuffer(temp);
             result = s5.charAt(0);
         }
-        System.out.println(result);
+        // System.out.println(result); --> result check
 
         // matching the result
 
