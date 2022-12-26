@@ -1,0 +1,70 @@
+//package oopj;
+
+// guess the number in java.
+import java.util.*;
+class game  // class for game
+{
+    public int number ; // variable to store random number
+    public int your_number; // variable to store players input number
+    public int count = 0;
+    void number(){
+        Random r = new Random();
+        this.number = r.nextInt(100); // generating random number
+    }
+    void TakeUserInput(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("guess the number(from 0 to 100) : ");
+        your_number = s.nextInt(); // players input number
+
+    }
+   int IsCorrectNumber(){
+        if (your_number == number) // condition to check players and random number are same
+        {
+            System.out.println("guess is right ! ");
+            System.out.println("you used " + (count + 1) + " attempts");
+            if(count==1){System.out.println("You are HACKER😲");}
+            if(count==2){System.out.println("You are PRO MAX😲");}
+            if(count==3){System.out.println("You are PRO😎");}
+            if(count==4){System.out.println("You are INTERMIDEATE");}
+            if(count==5){System.out.println("You are BEGGNER😉");}
+            if(count==6){System.out.println("You are NOOB");}
+            System.out.println("=========================== game is finished ===========================");
+            return 1;
+        }
+        else if (your_number<number) // condition to check players numbers is less than random number
+        {
+            System.out.println("too less...."); // hint for player
+            System.out.println("try again....");
+            count++;
+        }
+        else if (your_number>number) // condition to check players numbers is greatter than random number
+        {
+            System.out.println("too high...."); // hint for player
+            System.out.println("try again....");
+            count++;
+        }
+        System.out.println("-----------------------------------------------------------------------");
+        return 0;
+    }
+}
+public class Guess // main class (save code as class Main.java)
+{
+    public static void main(String[] args) {
+        System.out.println("========================= Welcome to the game =========================");
+        System.out.println("========================== guess the number ===========================");
+        game s = new game();
+        s.number(); // call function to generate random number
+        int a = 0;
+        while(a!=1) // loops for players input till number get same
+        { 
+            s.TakeUserInput(); // call function to input players number
+            a = s.IsCorrectNumber(); // call function to check both numbers are equal
+            if(s.count>=6){
+                System.out.println("OHH SHIT YOU ARE OUT OF CHANCE");
+                System.out.println("RESTART THE GAME");
+                a=1;
+            }
+
+        }
+    }
+}
