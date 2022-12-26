@@ -9,11 +9,11 @@ class game  // class for game
     public int count = 0;
     void number(){
         Random r = new Random();
-        this.number = r.nextInt(100); // generating random number
+        this.number = r.nextInt(50); // generating random number
     }
     void TakeUserInput(){
         Scanner s = new Scanner(System.in);
-        System.out.println("guess the number(from 0 to 100) : ");
+        System.out.println("guess the number(from 0 to 50) : ");
         your_number = s.nextInt(); // players input number
 
     }
@@ -22,12 +22,12 @@ class game  // class for game
         {
             System.out.println("guess is right ! ");
             System.out.println("you used " + (count + 1) + " attempts");
-            if(count==1){System.out.println("You are HACKER😲");}
-            if(count==2){System.out.println("You are PRO MAX😲");}
-            if(count==3){System.out.println("You are PRO😎");}
-            if(count==4){System.out.println("You are INTERMIDEATE");}
-            if(count==5){System.out.println("You are BEGGNER😉");}
-            if(count==6){System.out.println("You are NOOB");}
+            if(count==0){System.out.println("You are HACKER😲");}
+            if(count==1){System.out.println("You are PRO MAX😲");}
+            if(count==2){System.out.println("You are PRO😎");}
+            if(count==3){System.out.println("You are INTERMIDEATE");}
+            if(count==4){System.out.println("You are BEGGNER😉");}
+            if(count==5){System.out.println("You are NOOB😂");}
             System.out.println("=========================== game is finished ===========================");
             return 1;
         }
