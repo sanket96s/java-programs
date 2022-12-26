@@ -47,7 +47,7 @@ class game  // class for game
         return 0;
     }
 }
-public class Guess // main class (save code as class Main.java)
+public class Main // main class (save code as class Main.java)
 {
     public static void main(String[] args) {
         System.out.println("========================= Welcome to the game =========================");
