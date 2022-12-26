@@ -62,6 +62,7 @@ public class Main // main class (save code as class Main.java)
             if(s.count>=6){
                 System.out.println("OHH SHIT YOU ARE OUT OF CHANCE");
                 System.out.println("RESTART THE GAME");
+                System.out.println("The number was : "+s.number);
                 a=1;
             }
 
